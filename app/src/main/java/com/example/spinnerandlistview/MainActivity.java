@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     TextView language;
     TextView anthem;
     String continent="";
-    String[] continents={"אסיה","אמריקה הצפונית","אמריקה הדרומית","אירופה"};
+    String[] continents={"יבשת","אסיה","אמריקה הצפונית","אמריקה הדרומית","אירופה"};
     String[][] countries=new String[4][7];
     String[][] data=new String[28][4];
 
@@ -88,21 +88,21 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             language.setText(data[position][2]);
             anthem.setText(data[position][3]);
         }
-        if (continent.equals("אמריקה הצפונית"))
+        else if (continent.equals("אמריקה הצפונית"))
         {
             city.setText(data[position+7][0]);
             population.setText(data[position+7][1]);
             language.setText(data[position+7][2]);
             anthem.setText(data[position+7][3]);
         }
-        if (continent.equals("אמריקה הדרומית"))
+        else if (continent.equals("אמריקה הדרומית"))
         {
             city.setText(data[position+14][0]);
             population.setText(data[position+14][1]);
             language.setText(data[position+14][2]);
             anthem.setText(data[position+14][3]);
         }
-        if (continent.equals("אירופה"))
+        else if (continent.equals("אירופה"))
         {
             city.setText(data[position+21][0]);
             population.setText(data[position+21][1]);
@@ -115,27 +115,55 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         if (position==0)
         {
+            list.setAdapter(null);
+            city.setText("עיר בירה");
+            population.setText("אוכלוסייה");
+            language.setText("שפה רשמית");
+            anthem.setText("המנון לאומי");
+        }
+        if (position==1)
+        {
             continent="אסיה";
             ArrayAdapter<String> adp2=new ArrayAdapter<String>(this,R.layout.support_simple_spinner_dropdown_item,countries[0]);
             list.setAdapter(adp2);
+
+            city.setText("עיר בירה");
+            population.setText("אוכלוסייה");
+            language.setText("שפה רשמית");
+            anthem.setText("המנון לאומי");
         }
-        else if (position==1)
+        else if (position==2)
         {
             continent="אמריקה הצפונית";
             ArrayAdapter<String> adp2=new ArrayAdapter<String>(this,R.layout.support_simple_spinner_dropdown_item,countries[1]);
             list.setAdapter(adp2);
+
+            city.setText("עיר בירה");
+            population.setText("אוכלוסייה");
+            language.setText("שפה רשמית");
+            anthem.setText("המנון לאומי");
         }
-        else if (position==2)
+        else if (position==3)
         {
             continent="אמריקה הדרומית";
             ArrayAdapter<String> adp2=new ArrayAdapter<String>(this,R.layout.support_simple_spinner_dropdown_item,countries[2]);
             list.setAdapter(adp2);
+
+            city.setText("עיר בירה");
+            population.setText("אוכלוסייה");
+            language.setText("שפה רשמית");
+            anthem.setText("המנון לאומי");
         }
-        else if (position==3)
+        else if (position==4)
         {
             continent="אירופה";
             ArrayAdapter<String> adp2=new ArrayAdapter<String>(this,R.layout.support_simple_spinner_dropdown_item,countries[3]);
             list.setAdapter(adp2);
+
+            city.setText("עיר בירה");
+            population.setText("אוכלוסייה");
+            language.setText("שפה רשמית");
+            anthem.setText("המנון לאומי");
         }
     }
 
